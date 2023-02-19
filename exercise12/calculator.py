@@ -1,8 +1,8 @@
 print("************** Welcome to My Basic Calculator **************")
 calculation_history = []
-calculator = 'y'
+calculator = "y"
 
-while calculator.lower() == 'y':
+while calculator.lower() == "y":
     print("""
     1. Perform a calculation
     2. View calculation history
@@ -10,7 +10,7 @@ while calculator.lower() == 'y':
     """)
     menu_choice = input("Please select an option: ")
 
-    if menu_choice == '1':
+    if menu_choice == "1":
         calculation_numbers = []
         number_pass = False
         operator_pass = False
@@ -58,14 +58,14 @@ while calculator.lower() == 'y':
 
         calculator = input("\nPress 'y' to return to the main menu, or any other key to exit: ")
 
-    elif menu_choice == '2':
+    elif menu_choice == "2":
         print("\n\tYour calculation history:")
         for history in calculation_history:
             print("\t" + history)
         calculator = input("\nPress 'y' to return to the main menu, or any other key to exit: ")
 
-    elif menu_choice == '3':
-        calculator = 'n'
+    elif menu_choice == "3":
+        calculator = "n"
 
     elif menu_choice != "1" or "2" or "3":
         print("\n\t*** Error: Please select a valid option from the menu ***")
