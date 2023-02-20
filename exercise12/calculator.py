@@ -38,25 +38,21 @@ while calculator.lower() == "y":
         result = calculation_numbers[0]
         history = [str(calculation_numbers[0])]
         for num in range(1, len(calculation_numbers)):
+            history.extend(" " + operator + " " + str(calculation_numbers[num]))
             if operator == "+":
                 result += calculation_numbers[num]
-                history.extend(" " + operator + " " + str(calculation_numbers[num]))
             elif operator == "-":
                 result -= calculation_numbers[num]
-                history.extend(" " + operator + " " + str(calculation_numbers[num]))
             elif operator == "/" and calculation_numbers[num] == 0:
                 print("You cannot divide by zero and this number will be removed from the calculation")
             elif operator == "/":
                 result /= calculation_numbers[num]
-                history.extend(" " + operator + " " + str(calculation_numbers[num]))
             else:
                 result *= calculation_numbers[num]
-                history.extend(" " + operator + " " + str(calculation_numbers[num]))
 
         result_calculation = "".join(history) + " = " + str(result)
         calculation_history.extend([result_calculation])
         print("\n\tThe result: " + result_calculation)
-
         calculation_history_bool = True
         calculator = input("\nPress 'y' to return to the main menu, or any other key to exit: ")
 
